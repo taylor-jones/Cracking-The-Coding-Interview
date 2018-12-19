@@ -41,4 +41,4 @@ The goal is to solve each problem using each language. However, the over-arching
 |2.7	|	Implement a function to check if a linked list is a palindrome. |	  |	  |	  |   |  
 
 
-\* Some of the solutions are in the same file at the linked-list implementations, themseleves.
+\* Some of the solutions are in the same file as the thier corresponding linked-list implementations.
