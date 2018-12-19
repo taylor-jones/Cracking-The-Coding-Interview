@@ -59,7 +59,7 @@ public class Main {
   }
 
 
-
+  
   public static void main(String[] args) {
     System.out.println(replaceSpaces("Mr John Smith    ", 13));
     System.out.println(replaceSpaces("Hootie And The Blowfish      ", 23));

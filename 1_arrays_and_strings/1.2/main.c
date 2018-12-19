@@ -27,8 +27,6 @@ void reverse(char* s) {
 }
 
 
-
-
 int main() {
   char x[10] = "telephone";
   char y[50] = "This little light of mine";

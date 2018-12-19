@@ -76,7 +76,6 @@ public class Main {
   }
 
 
-
   public static void main(String[] args) {
     System.out.println(compressed("The black cat"));    // would not be shortened by compressing
     System.out.println(compressed("aaabbbccc"));        // would be shortened by compressing

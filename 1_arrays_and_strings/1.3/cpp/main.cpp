@@ -34,7 +34,6 @@ bool isPermutation(string s1, string s2) {
 }
 
 
-
 int main() {
   cout << isPermutation("care", "race") << endl;              // true
   cout << isPermutation("care", "rack") << endl;              // false
