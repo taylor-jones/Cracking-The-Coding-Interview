@@ -81,10 +81,9 @@
       // normalize the input string and determine if it's lenght is odd or even.
       String lowered = s.toLowerCase().replaceAll("[^a-z]","");
       boolean hasEvenLength = lowered.length() % 2 == 0;
-      char[] chars = lowered.toCharArray();
 
       // count the # of times each character is present.
-      for (char c : chars) {
+      for (char c : lowered.toCharArray()) {
         if (map.containsKey(c)) {
           currCount = map.get(c) + 1;
         } else {
@@ -112,6 +111,9 @@
 
 
 
+    /**
+     * Examples
+     */
     public static void main(String[] args) {
      System.out.println(isPalindromePermutation("Tact Coa")); // true
      System.out.println(isPalindromePermutation("foo bar"));  // false
