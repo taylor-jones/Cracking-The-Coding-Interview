@@ -74,7 +74,7 @@ public class Main {
    * Question: 1.1
    * Description: Implement an algorithm to determine if a string has all unique characters.
    * Variation: Ignore spaces.
-   * Solution: Use the same solution as the first version (hash map), expect any character that is
+   * Solution: Use the same solution as the first version (hash map), except any character that is
    *  a space does not get checked for duplicates.
    * Runtime - O(n)
    * 
