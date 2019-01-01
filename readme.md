@@ -1,5 +1,5 @@
 # Cracking The Coding Interview
-The goal is to implement and demonstrate solutions to each of the problems in Cracking The Coding Interview - 6th Edition, using each of:
+Implementing and demonstrating solutions to each of the problems in Cracking The Coding Interview - 6th Edition, using each of:
 - C
 - C++
 - Java
