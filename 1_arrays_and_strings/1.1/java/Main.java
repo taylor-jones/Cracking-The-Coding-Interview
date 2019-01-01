@@ -14,7 +14,7 @@ public class Main {
    * @param s - String
    * @return boolean
    */
-  private static boolean hasAllUniqueCharacters(String s) {
+  private static boolean isUnique(String s) {
     HashMap<Character, Boolean>map = new HashMap<>();
     char[] chars = s.toCharArray();
     for (char c : chars) {
@@ -43,7 +43,7 @@ public class Main {
    * @param s - String
    * @return boolean
    */
-  private static boolean hasAllUniqueCharacters2(String s) {
+  private static boolean isUnique2(String s) {
     // For ASCII, there are only 128 possible characters, so if the
     // string has more than that, there must be a duplicate. 
     int stringLength = s.length();
@@ -81,7 +81,7 @@ public class Main {
    * @param s - String
    * @return boolean
    */
-  private static boolean hasAllUniqueCharacters3(String s) {
+  private static boolean isUnique3(String s) {
     HashMap<Character, Boolean>map = new HashMap<>();
     char[] chars = s.toCharArray();
 
@@ -109,7 +109,7 @@ public class Main {
    * @param s - String
    * @return boolean
    */
-  private static boolean hasAllUniqueCharacters4(String s, char[] ignoreList) {
+  private static boolean isUnique4(String s, char[] ignoreList) {
     HashMap<Character, Boolean>map = new HashMap<>();
     char[] chars = s.toCharArray();
 
@@ -137,7 +137,7 @@ public class Main {
    * @param s - String
    * @return boolean
    */
-  private static boolean hasAllUniqueCharacters5(String s) {
+  private static boolean isUnique5(String s) {
     HashMap<Character, Boolean>map = new HashMap<>();
     char[] chars = s.toLowerCase().toCharArray();
 
@@ -178,35 +178,35 @@ public class Main {
   
 
   public static void main(String[] args) {
-    System.out.println(hasAllUniqueCharacters("foO")); // case is not ignored, so o and O are seen as different chars
-    System.out.println(hasAllUniqueCharacters("fog"));
-    System.out.println(hasAllUniqueCharacters("the quick brown fox jumps over the lazy dog"));
-    System.out.println(hasAllUniqueCharacters("Cwm fjord bank glyphs vext quiz"));
+    System.out.println(isUnique("foO")); // case is not ignored, so o and O are seen as different chars
+    System.out.println(isUnique("fog"));
+    System.out.println(isUnique("the quick brown fox jumps over the lazy dog"));
+    System.out.println(isUnique("Cwm fjord bank glyphs vext quiz"));
     System.out.print('\n');
 
-    System.out.println(hasAllUniqueCharacters2("foo"));
-    System.out.println(hasAllUniqueCharacters2("fog"));
-    System.out.println(hasAllUniqueCharacters2("the quick brown fox jumps over the lazy dog"));
-    System.out.println(hasAllUniqueCharacters2("Cwm fjord bank glyphs vext quiz"));
+    System.out.println(isUnique2("foo"));
+    System.out.println(isUnique2("fog"));
+    System.out.println(isUnique2("the quick brown fox jumps over the lazy dog"));
+    System.out.println(isUnique2("Cwm fjord bank glyphs vext quiz"));
     System.out.print('\n');
 
-    System.out.println(hasAllUniqueCharacters3("foo"));
-    System.out.println(hasAllUniqueCharacters3("fog"));
-    System.out.println(hasAllUniqueCharacters3("the quick brown fox jumps over the lazy dog"));
-    System.out.println(hasAllUniqueCharacters3("Cwm fjord bank glyphs vext quiz"));
+    System.out.println(isUnique3("foo"));
+    System.out.println(isUnique3("fog"));
+    System.out.println(isUnique3("the quick brown fox jumps over the lazy dog"));
+    System.out.println(isUnique3("Cwm fjord bank glyphs vext quiz"));
     System.out.print('\n');
 
     char[] ignored = {'a', 'e', 'i', 'o', 'u', ' '};
-    System.out.println(hasAllUniqueCharacters4("foo", ignored));
-    System.out.println(hasAllUniqueCharacters4("fog", ignored));
-    System.out.println(hasAllUniqueCharacters4("the quick brown fox jumps over the lazy dog", ignored));
-    System.out.println(hasAllUniqueCharacters4("Cwm fjord bank glyphs vext quiz", ignored));
+    System.out.println(isUnique4("foo", ignored));
+    System.out.println(isUnique4("fog", ignored));
+    System.out.println(isUnique4("the quick brown fox jumps over the lazy dog", ignored));
+    System.out.println(isUnique4("Cwm fjord bank glyphs vext quiz", ignored));
     System.out.print('\n');
 
-    System.out.println(hasAllUniqueCharacters5("foO"));  // case is ignored, so o and O are seen as same char
-    System.out.println(hasAllUniqueCharacters5("fog"));
-    System.out.println(hasAllUniqueCharacters5("the quick brown fox jumps over the lazy dog"));
-    System.out.println(hasAllUniqueCharacters5("Cwm fjord bank glyphs vext quiz"));
+    System.out.println(isUnique5("foO"));  // case is ignored, so o and O are seen as same char
+    System.out.println(isUnique5("fog"));
+    System.out.println(isUnique5("the quick brown fox jumps over the lazy dog"));
+    System.out.println(isUnique5("Cwm fjord bank glyphs vext quiz"));
     System.out.print('\n');
   }
 }
