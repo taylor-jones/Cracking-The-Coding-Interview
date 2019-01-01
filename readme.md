@@ -14,7 +14,7 @@ The goal is to solve each problem using each language. However, the over-arching
 
 | #  	| Title | C   | C++ | Java  | JS  | Python
 |---  |---  |---  |---  |---  |---  |---  
-|1.1	|Is Unique	|	  |	  |	[Java](1_arrays_and_strings/1.1/java/Main.java)  | [JS](1_arrays_and_strings/1.1/js/main.js)  |  [Python](1_arrays_and_strings/1.1/python/main.py)
+|1.1	|Is Unique	|	  |	[C++](1_arrays_and_strings/1.1/cpp/main.cpp)  |	[Java](1_arrays_and_strings/1.1/java/Main.java)  | [JS](1_arrays_and_strings/1.1/js/main.js)  |  [Python](1_arrays_and_strings/1.1/python/main.py)
 |1.2	| Check Permutation	| 	| [C++](1_arrays_and_strings/1.2/cpp/main.cpp)	| [Java](1_arrays_and_strings/1.2/java/Main.java)	| [JS](1_arrays_and_strings/1.2/js/main.js)  |  [Python](1_arrays_and_strings/1.2/python/main.py)
 |1.3	|	URLify |	| 	|	[Java](1_arrays_and_strings/1.3/java/Main.java)  | [JS](1_arrays_and_strings/1.3/js/main.js) |  [Python](1_arrays_and_strings/1.3/python/main.py)
 |1.4  | Palindrome Permutation  |   |   | [Java](1_arrays_and_strings/1.4/java/Main.java)  |   |
