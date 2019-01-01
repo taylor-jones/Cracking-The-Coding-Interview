@@ -2,6 +2,7 @@ public class Main {
 
   /**
    * Question: 1.2
+   * Name: Check Permutation
    * Description: Given two strings, write a method to decide if one is a permutation of the other.
    * Solution: The strings must pass two inspections to be considered a permutation of each other:
    *  1) They should be the same length.
@@ -34,11 +35,11 @@ public class Main {
 
 
   public static void main(String[] args) {
-    System.out.println(isPermutation("care", "race"));
-    System.out.println(isPermutation("care", "rack"));
-    System.out.println(isPermutation("care", "care"));
-    System.out.println(isPermutation("care", "care bear"));
-    System.out.println(isPermutation("care", "car"));
+    System.out.println(isPermutation("care", "race"));          // true
+    System.out.println(isPermutation("care", "rack"));          // false
+    System.out.println(isPermutation("care", "care"));          // true
+    System.out.println(isPermutation("care", "care bear"));     // false
+    System.out.println(isPermutation("care", "car"));           // false
   }
 
 }
