@@ -20,9 +20,9 @@ The goal is to solve each problem using each language. However, the over-arching
 |1.4  | Palindrome Permutation  |   |   | [Java](1_arrays_and_strings/1.4/java/Main.java)  | [JS](1_arrays_and_strings/1.4/js/main.js)  |
 |1.5  | One Away  |   |   | [Java](1_arrays_and_strings/1.5/java/Main.java)  | [JS](1_arrays_and_strings/1.5/js/main.js)  |
 |1.6	|	String Compression |	| [C++](1_arrays_and_strings/1.6/cpp/main.cpp)	 |	[Java](1_arrays_and_strings/1.6/java/Main.java)  |    |  
-|1.6	| Rotate Matrix	|	  |	  |	  |   |  
-|1.7	|	Zero Matrix |	  |	  |	  |   |  
-|1.8	|	String Rotation |	  |	  |	  |  |  
+|1.7	| Rotate Matrix	|	  |	  |	  |   |  
+|1.8	|	Zero Matrix |	  |	  |	  |   |  
+|1.9	|	String Rotation |	  |	  |	  |  |  
 
 <br>
 
