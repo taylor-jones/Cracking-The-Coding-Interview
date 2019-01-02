@@ -78,7 +78,7 @@
       int currCount = 0;
       HashMap<Character, Integer>map = new HashMap<>();
 
-      // normalize the input string and determine if it's lenght is odd or even.
+      // normalize the input string and determine if it's length is odd or even.
       String lowered = s.toLowerCase().replaceAll("[^a-z]","");
       boolean hasEvenLength = lowered.length() % 2 == 0;
 
