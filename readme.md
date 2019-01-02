@@ -22,7 +22,7 @@ The goal is to solve each problem using each language. However, the over-arching
 |1.6	|	String Compression |	| [C++](1_arrays_and_strings/1.6/cpp/main.cpp)	 |	[Java](1_arrays_and_strings/1.6/java/Main.java)  |    |  
 |1.7	| Rotate Matrix	|	  |	  |	  |   |  
 |1.8	|	Zero Matrix |	  |	  |	  |   |  
-|1.9	|	String Rotation |	  |	  |	  |  |  
+|1.9	|	String Rotation |	  |	  |	[Java](1_arrays_and_strings/1.9/java/Main.java)  |  |  
 
 <br>
 
