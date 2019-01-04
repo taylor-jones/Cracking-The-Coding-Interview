@@ -286,5 +286,41 @@ public class SinglyLinkedList<T> {
     return trail.getValue();
   }
 
+
+
+  /********************************************************
+   * 2.3 - Delete Middle Node
+   * Description: Implement an algorithm to delete a node in the middle
+   *  of a singly linked list, given only access to that node.
+   * Solution: Traverse the list, starting with the head node. Compare
+   *  each list node's next node to the target node. If, at any point,
+   *  the target not is found in the list, remove it by updating the
+   *  previous node's next pointer to point to the target node's
+   *  next node.
+   * 
+   * Runtime: O(n)
+   ********************************************************/
+  public void deleteNode(SinglyLinkedListNode<T> node) {
+    SinglyLinkedListNode<T> temp = head;
+
+    if (temp == node) {
+      removeAtHead();
+    } else {
+      while (temp.getNext() != null) {
+        if (temp.getNext() == node) {
+          temp.setNext(temp.getNext().getNext());
+          this.size -= 1;
+          return;
+        }
+
+        temp = temp.getNext();
+      }
+    }
+
+    return;
+  }
+
+
+
 }
 

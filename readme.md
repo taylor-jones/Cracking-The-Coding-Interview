@@ -30,12 +30,12 @@ The goal is to solve each problem using each language. However, the over-arching
 
 | #  	| Title | C   | C++ | Java  | JS  | Python
 |---  |---  |---  |---  |---  |---  |---  
-|2.x  | Singly-linked list |  |   | [Java](2_linked_lists/java/LinkedList.java)  |   | 
+|2.x  | Singly-linked list |  |   | [Java](2_linked_lists/java/SinglyLinkedList.java)  |   | 
 |2.x  | Doubly-linked list |  |   |   |   | 
 |2.x  | Circularly-linked list |   |   |   |   | 
-|2.1	|	Remove Dups  |	  |	  | [Java*](2_linked_lists/java/LinkedList.java)  |   |  
-|2.2	| Return Kth to Last  | 	|	  | [Java*](2_linked_lists/java/LinkedList.java)  |   |
-|2.3	| Delete Middle Node	| 	|   | 	|   |  
+|2.1	|	Remove Dups  |	  |	  | [Java*](2_linked_lists/java/SinglyLinkedList.java)  |   |  
+|2.2	| Return Kth to Last  | 	|	  | [Java*](2_linked_lists/java/SinglyLinkedList.java)  |   |
+|2.3	| Delete Middle Node	| 	|   | [Java*](2_linked_lists/java/SinglyLinkedList.java)	|   |  
 |2.4	|	Partition |	  | 	|	  |   |  
 |2.5	|	Sum Lists |	  |   |	  |   |  
 |2.6	| Palindrome  |	  |	  |	  |   |  
