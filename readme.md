@@ -36,7 +36,7 @@ The goal is to solve each problem using each language. However, the over-arching
 |2.1	|	Remove Dups  |	  |	  | [Java*](2_linked_lists/java/SinglyLinkedList.java)  |   |  
 |2.2	| Return Kth to Last  | 	|	  | [Java*](2_linked_lists/java/SinglyLinkedList.java)  |   |
 |2.3	| Delete Middle Node	| 	|   | [Java*](2_linked_lists/java/SinglyLinkedList.java)	|   |  
-|2.4	|	Partition |	  | 	|	  |   |  
+|2.4	|	Partition |	  | 	|	[Java*](2_linked_lists/java/SinglyLinkedList.java)  |   |  
 |2.5	|	Sum Lists |	  |   |	  |   |  
 |2.6	| Palindrome  |	  |	  |	  |   |  
 |2.7	|	Intersection |	  |	  |	  |   |  
