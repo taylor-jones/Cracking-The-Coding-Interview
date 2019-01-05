@@ -25,14 +25,17 @@ public class SinglyLinkedList<T> {
    * @param node
    */
   public void addAtHead(SinglyLinkedListNode<T> node) {
-    node.setNext(head);
-    head = node;
+    System.out.print("Adding " + node.getValue() + " at HEAD ... ");
 
-    if (tail == null) {
-      tail = head;
+    node.setNext(this.head);
+    this.head = node;
+
+    if (this.tail == null) {
+      this.tail = node;
     }
 
     this.size += 1;
+    this.showState();
   }
 
 
@@ -55,14 +58,17 @@ public class SinglyLinkedList<T> {
    * @param node
    */
   public void addAtTail(SinglyLinkedListNode<T> node) {
+    System.out.print("Adding " + node.getValue() + " at TAIL ... ");
+
     if (this.tail != null) {
       this.tail.setNext(node);
-      this.tail = this.tail.getNext();
+      this.tail = node;
     } else {
       this.head = this.tail = node;
     }
 
     this.size += 1;
+    this.showState();
   }
 
 
@@ -89,9 +95,15 @@ public class SinglyLinkedList<T> {
     }
 
     T removed = this.head.getValue();
-    System.out.println("Removing " + removed + " from the head of the list.");
+    System.out.print("Removing " + removed + " from HEAD ... ");
     this.head = this.head.getNext();
     this.size -= 1;
+
+    if (this.size <= 1) {
+      this.tail = this.head;
+    }
+
+    this.showState();
     return removed;
   }
 
@@ -107,12 +119,12 @@ public class SinglyLinkedList<T> {
     }
 
     T removed = this.tail.getValue();
-    System.out.println("Removing " + removed + " from the tail of the list.");
+    System.out.print("Removing " + removed + " from TAIL ... ");
     
     if (this.head == this.tail) {
       this.head = this.tail = null;
     } else {
-      SinglyLinkedListNode temp = this.head;
+      SinglyLinkedListNode<T> temp = this.head;
       while (temp.getNext().getNext() != null) {
         temp = temp.getNext();
       }
@@ -123,6 +135,7 @@ public class SinglyLinkedList<T> {
     }
 
     this.size -= 1;
+    this.showState();
     return removed;
   }
 
@@ -163,6 +176,20 @@ public class SinglyLinkedList<T> {
   }
 
 
+
+  /**
+   * Updates the head, tail, and size of the current list with
+   * some other list, effectively replacing the current list
+   * with the new list.
+   * @param newList - SinglyLinkedList - the replacement list.
+   */
+  private void replaceWith(SinglyLinkedList<T> newList) {
+    this.head = newList.head;
+    this.tail = newList.tail;
+    this.size = newList.size;
+  }
+
+
   /**
    * Prints the size and contents of the linked list.
    */
@@ -184,6 +211,25 @@ public class SinglyLinkedList<T> {
   }
 
 
+  public void showState() {
+    System.out.print("Size: " + this.size);
+
+    if (this.head == null) {
+      System.out.print("  Head: null");
+    } else {
+      System.out.print("  Head:" + this.head.getValue());
+    }
+
+    if (this.tail == null) {
+      System.out.print("  Tail: null");
+    } else {
+      System.out.print("  Tail:" + this.tail.getValue());
+    }
+
+    System.out.print("\n");
+  }
+
+
 
   /********************************************************
    * 2.1 - Remove Dups
@@ -197,9 +243,12 @@ public class SinglyLinkedList<T> {
    * Runtime: O(n)
    ********************************************************/
   public void removeDups() {
+    System.out.print("Removing duplicate values ... ");
+
     HashSet<T> set = new HashSet<>();
     SinglyLinkedListNode<T> curr = this.head;
     SinglyLinkedListNode<T> prev = null;
+    int prevSize = this.size;
     int count = 0;
 
     while (curr != null) {
@@ -215,6 +264,7 @@ public class SinglyLinkedList<T> {
     }
 
     this.size = count;
+    System.out.println("Items Removed: " + (prevSize - this.size));
   }
 
 
@@ -310,6 +360,7 @@ public class SinglyLinkedList<T> {
         if (temp.getNext() == node) {
           temp.setNext(temp.getNext().getNext());
           this.size -= 1;
+          System.out.println("Deleted given node with value " + node.getValue());
           return;
         }
 
@@ -317,9 +368,58 @@ public class SinglyLinkedList<T> {
       }
     }
 
-    return;
+    System.out.println("Node with value " + node.getValue() + " not found.");
   }
 
+
+
+  /********************************************************
+   * 2.4 - Partition
+   * Description: Write code to partition a linked list around
+   *  a value x, such that all nodes less than x come before all
+   *  nodes greater than or equal to x. If x is contained within
+   *  the list, the values of x only need to be after the elements
+   *  less than x. The partition element x can appear anywhere in
+   *  the correct partition; it does not need to appear between the
+   *  left and right partitions.
+   * 
+   * Solution: Create a new, empty list. Then, traverse the existing list.
+   *  Any node having a value less than the partition value will be added
+   *  to the head of the new list, and any node having a value greater than
+   *  or equal to the partition value will be added to the tail of the new
+   *  list. After the entire list has been traversed, replace the current
+   *  list with the new list.
+   * 
+   * Runtime: O(n) ?
+   * 
+   * Example:   Input:  3 -> 5 -> 8 -> 5 -> 10 -> 2 -> 1  Partition: 5
+   *            Output: 3 -> 1 -> 2 -> 10 -> 5 -> 5 -> 8
+   * 
+   * @param value - T (int in this case) - the value on which
+   *  to partition the list.
+   * 
+   * Note: All though the list is designed to use generic type T,
+   *  this implementation assumes the value is an integer.
+   ********************************************************/
+  public void partition(T value) {
+    System.out.println("Partitioning list on value " + value);
+    SinglyLinkedList<T>partitionedList = new SinglyLinkedList();
+    SinglyLinkedListNode<T> trace = this.head;
+    SinglyLinkedListNode<T> temp = this.head;
+
+    while (trace != null) {
+      temp = trace;
+      trace = trace.getNext();
+      
+      if ((Integer) temp.getValue() < (Integer) value) {
+        partitionedList.addAtHead(temp);
+      } else {
+        partitionedList.addAtTail(temp);
+      }
+    }
+
+    this.replaceWith(partitionedList);
+  }
 
 
 }

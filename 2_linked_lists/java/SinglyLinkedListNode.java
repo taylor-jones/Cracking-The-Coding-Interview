@@ -1,11 +1,12 @@
 public class SinglyLinkedListNode<T> {
   // member variables
   private T value;
-  private SinglyLinkedListNode<T> next = null;
+  private SinglyLinkedListNode<T> next;
 
   // constructor
   public SinglyLinkedListNode(T value) {
     this.value = value;
+    this.setNext(null);
   }
 
   // member functions

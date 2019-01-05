@@ -1,45 +1,72 @@
 import java.util.HashSet;
 
+/**
+ * Example calls to the various linked list method solutions.
+ * 
+ * Note: Many of the methods also print statements to the console
+ * to help indicate exactly what changes are being made to the list.
+ */
 public class Main {
   public static void main(String[] args) {
-    SinglyLinkedList<Integer> ll = new SinglyLinkedList<Integer>();
-    SinglyLinkedListNode<Integer> fiveNode = new SinglyLinkedListNode<Integer>(5);
+    SinglyLinkedList<Integer> list = new SinglyLinkedList<Integer>();
+    SinglyLinkedListNode<Integer> fiveNode = new SinglyLinkedListNode<Integer>(5);  // used for 2.3
+    SinglyLinkedListNode<Integer> nineNode = new SinglyLinkedListNode<Integer>(9);  // used for 2.3
 
-    ll.addAtHead(fiveNode);
-    ll.addAtHead(4);
-    ll.addAtHead(4);
-    ll.addAtHead(2);
-    ll.addAtHead(6);
-    ll.addAtHead(6);
-    ll.addAtTail(8);
-    ll.print();
+    list.addAtHead(fiveNode);
+    list.addAtHead(4);
+    list.addAtHead(4);
+    list.addAtHead(2);
+    list.addAtHead(6);
+    list.addAtHead(6);
+    list.addAtTail(8);
+    list.addAtTail(9);
+    list.print();
 
-    ll.removeAtHead();
-    ll.print();
+    list.removeAtHead();
+    list.removeAtTail();
+    list.removeAtTail();
+    list.removeAtTail();
+    list.removeAtTail();
+    list.print();
 
-    ll.removeAtTail();
-    ll.print();
+    list.removeAtTail();
+    list.print();
 
-    ll.has(2);
-    ll.has(3);
+    list.has(2);
+    list.has(3);
 
-    ll.removeDups();
-    ll.print();
+    list.removeDups();
+    list.print();
 
-    ll.deleteNode(fiveNode);
-    ll.print();
+    list.deleteNode(fiveNode);
+    list.deleteNode(nineNode);
+    list.print();
 
-    System.out.println(ll.nthFromLast(0));
-    System.out.println(ll.nthFromLast(1));
-    System.out.println(ll.nthFromLast(2));
-    System.out.println(ll.nthFromLast(3));
-    System.out.println(ll.nthFromLast(4));
+    list.addAtHead(4);
+    list.addAtHead(3);
+    list.addAtHead(2);
+    list.addAtHead(1);
+    list.addAtTail(5);
+    list.addAtTail(1);
+    list.addAtTail(2);
+    list.addAtTail(3);
+    list.addAtTail(4);
+    list.print();
 
-    System.out.println(ll.nthFromLast2(0));
-    System.out.println(ll.nthFromLast2(1));
-    System.out.println(ll.nthFromLast2(2));
-    System.out.println(ll.nthFromLast2(3));
-    System.out.println(ll.nthFromLast2(4));
+    list.partition(3);
+    list.print();
+
+    // System.out.println(list.nthFromLast(0));
+    // System.out.println(list.nthFromLast(1));
+    // System.out.println(list.nthFromLast(2));
+    // System.out.println(list.nthFromLast(3));
+    // System.out.println(list.nthFromLast(4));
+
+    // System.out.println(list.nthFromLast2(0));
+    // System.out.println(list.nthFromLast2(1));
+    // System.out.println(list.nthFromLast2(2));
+    // System.out.println(list.nthFromLast2(3));
+    // System.out.println(list.nthFromLast2(4));
   }
 
 }
