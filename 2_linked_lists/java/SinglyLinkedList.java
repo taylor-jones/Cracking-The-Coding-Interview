@@ -5,9 +5,9 @@
 
 import java.util.HashSet;
 
-public class SinglyLinkedList<T> {
-  public SinglyLinkedListNode<T> head;
-  public SinglyLinkedListNode<T> tail;
+public class SinglyLinkedList {
+  public SinglyLinkedListNode head;
+  public SinglyLinkedListNode tail;
   public int size;
 
   // constructor
@@ -24,7 +24,7 @@ public class SinglyLinkedList<T> {
    * 
    * @param node
    */
-  public void addAtHead(SinglyLinkedListNode<T> node) {
+  public void addAtHead(SinglyLinkedListNode node) {
     System.out.print("Adding " + node.getValue() + " at HEAD ... ");
 
     node.setNext(this.head);
@@ -46,8 +46,8 @@ public class SinglyLinkedList<T> {
    * 
    * @param value
    */
-  public void addAtHead(T value) {
-    this.addAtHead(new SinglyLinkedListNode<T>(value));
+  public void addAtHead(int value) {
+    this.addAtHead(new SinglyLinkedListNode(value));
   }
 
 
@@ -57,7 +57,7 @@ public class SinglyLinkedList<T> {
    * 
    * @param node
    */
-  public void addAtTail(SinglyLinkedListNode<T> node) {
+  public void addAtTail(SinglyLinkedListNode node) {
     System.out.print("Adding " + node.getValue() + " at TAIL ... ");
 
     if (this.tail != null) {
@@ -79,22 +79,22 @@ public class SinglyLinkedList<T> {
    * 
    * @param value
    */
-  public void addAtTail(T value) {
-    this.addAtTail(new SinglyLinkedListNode<T>(value));
+  public void addAtTail(int value) {
+    this.addAtTail(new SinglyLinkedListNode(value));
   }
 
 
   /**
    * Removes the node at the beginning of the list and returns the value within that node.
-   * @return T - the value within the head node.
+   * @return int - the value within the head node.
    */
-  public T removeAtHead() {
+  public int removeAtHead() {
     if (this.isEmpty()) {
       System.out.println("The list is empty. There's nothing to remove.");
-      return null;
+      return (Integer) null;
     }
 
-    T removed = this.head.getValue();
+    int removed = this.head.getValue();
     System.out.print("Removing " + removed + " from HEAD ... ");
     this.head = this.head.getNext();
     this.size -= 1;
@@ -110,21 +110,21 @@ public class SinglyLinkedList<T> {
 
   /**
    * Removes the node at the end of the list and returns the value within that node.
-   * @return T - the value in the tail node.
+   * @return int - the value in the tail node.
    */
-  public T removeAtTail() {
+  public int removeAtTail() {
     if (this.isEmpty()) {
       System.out.println("The list is empty. There's nothing to remove.");
-      return null;
+      return (Integer) null;
     }
 
-    T removed = this.tail.getValue();
+    int removed = this.tail.getValue();
     System.out.print("Removing " + removed + " from TAIL ... ");
     
     if (this.head == this.tail) {
       this.head = this.tail = null;
     } else {
-      SinglyLinkedListNode<T> temp = this.head;
+      SinglyLinkedListNode temp = this.head;
       while (temp.getNext().getNext() != null) {
         temp = temp.getNext();
       }
@@ -142,11 +142,11 @@ public class SinglyLinkedList<T> {
 
   /**
    * Checks if a specified value exists in the linked list.
-   * @param value - T - the value to check for.
+   * @param value - int - the value to check for.
    * @return boolean - True if there is a node in the list with the argued
    *  value, false if not.
    */
-  public boolean has(T value) {
+  public boolean has(int value) {
     if (!this.isEmpty()) {
       SinglyLinkedListNode temp = this.head;
       while (temp != null) {
@@ -183,7 +183,7 @@ public class SinglyLinkedList<T> {
    * with the new list.
    * @param newList - SinglyLinkedList - the replacement list.
    */
-  private void replaceWith(SinglyLinkedList<T> newList) {
+  private void replaceWith(SinglyLinkedList newList) {
     this.head = newList.head;
     this.tail = newList.tail;
     this.size = newList.size;
@@ -245,9 +245,9 @@ public class SinglyLinkedList<T> {
   public void removeDups() {
     System.out.print("Removing duplicate values ... ");
 
-    HashSet<T> set = new HashSet<>();
-    SinglyLinkedListNode<T> curr = this.head;
-    SinglyLinkedListNode<T> prev = null;
+    HashSet set = new HashSet<>();
+    SinglyLinkedListNode curr = this.head;
+    SinglyLinkedListNode prev = null;
     int prevSize = this.size;
     int count = 0;
 
@@ -279,8 +279,8 @@ public class SinglyLinkedList<T> {
    * 
    * Runtime: O(n)
    ********************************************************/
-  public T nthFromLast(int k) {
-    SinglyLinkedListNode<T> curr = head;
+  public int nthFromLast(int k) {
+    SinglyLinkedListNode curr = head;
     int target = this.size - k;
 
     if (k <= (size - 1)) {
@@ -292,7 +292,7 @@ public class SinglyLinkedList<T> {
     }
 
     // There aren't enough elements to get the kth from last
-    return null;
+    return (Integer) null;
   }
 
 
@@ -309,13 +309,13 @@ public class SinglyLinkedList<T> {
    * Runtime: O(n)
    * Space: O(1)
    ********************************************************/
-  public T nthFromLast2(int k) {
-    SinglyLinkedListNode<T> trail = this.head;
-    SinglyLinkedListNode<T> lead = this.head;
+  public int nthFromLast2(int k) {
+    SinglyLinkedListNode trail = this.head;
+    SinglyLinkedListNode lead = this.head;
 
     if (lead == null) {
       System.out.println("The list is empty!");
-      return null;
+      return (Integer) null;
     }
 
     // move the lead node ahead k nodes into the list
@@ -323,7 +323,7 @@ public class SinglyLinkedList<T> {
       lead = lead.getNext();
       if (lead == null) {
         // There aren't enough elements to get the kth from last
-        return null;
+        return (Integer) null;
       }
     }
 
@@ -350,8 +350,8 @@ public class SinglyLinkedList<T> {
    * 
    * Runtime: O(n)
    ********************************************************/
-  public void deleteNode(SinglyLinkedListNode<T> node) {
-    SinglyLinkedListNode<T> temp = head;
+  public void deleteNode(SinglyLinkedListNode node) {
+    SinglyLinkedListNode temp = head;
 
     if (temp == node) {
       removeAtHead();
@@ -395,23 +395,23 @@ public class SinglyLinkedList<T> {
    * Example:   Input:  3 -> 5 -> 8 -> 5 -> 10 -> 2 -> 1  Partition: 5
    *            Output: 3 -> 1 -> 2 -> 10 -> 5 -> 5 -> 8
    * 
-   * @param value - T (int in this case) - the value on which
+   * @param value - int (int in this case) - the value on which
    *  to partition the list.
    * 
    * Note: All though the list is designed to use generic type T,
    *  this implementation assumes the value is an integer.
    ********************************************************/
-  public void partition(T value) {
+  public void partition(int value) {
     System.out.println("Partitioning list on value " + value);
-    SinglyLinkedList<T>partitionedList = new SinglyLinkedList();
-    SinglyLinkedListNode<T> trace = this.head;
-    SinglyLinkedListNode<T> temp = this.head;
+    SinglyLinkedList partitionedList = new SinglyLinkedList();
+    SinglyLinkedListNode trace = this.head;
+    SinglyLinkedListNode temp = this.head;
 
     while (trace != null) {
       temp = trace;
       trace = trace.getNext();
       
-      if ((Integer) temp.getValue() < (Integer) value) {
+      if (temp.getValue() < value) {
         partitionedList.addAtHead(temp);
       } else {
         partitionedList.addAtTail(temp);
@@ -421,6 +421,57 @@ public class SinglyLinkedList<T> {
     this.replaceWith(partitionedList);
   }
 
+
+
+
+ /********************************************************
+  * 2.5 - Sum Lists
+  * Description: You have two numbers represented by a linked list,
+  *  where each node contains a single digit. The digits are stored
+  *  in reverse order, such that the 1's digit is at the head of the
+  *  list. Write a function that adds the two numbers and returns
+  *  the sum as a linked list.
+  * 
+  * Example: 
+  *  Input: (7 -> 1 -> 6) + (5 -> 9 -> 2), which is 617 + 295.
+  *  Output: 2 -> 1 -> 9, which is 912.
+  ********************************************************/
+  public SinglyLinkedList sumWith(SinglyLinkedList list) {
+    SinglyLinkedList newList = new SinglyLinkedList();
+    int a = this.getReversedListNumber(this);
+    int b = this.getReversedListNumber(list);
+    int sum = a + b;
+    String strSum = Integer.toString(sum);
+
+    for (int i = 0; i < strSum.length(); i++) {
+      newList.addAtHead(new SinglyLinkedListNode(Integer.parseInt(strSum.substring(i, i + 1))));
+    }
+    
+    return newList;
+  }
+
+
+  /**
+   * Helper function that traverses a linked list of integers
+   *  and returns the reversed integer value of the digits.
+   * 
+   * Example: 
+   *  Input: (7 -> 1 -> 6) Output: 617.
+   * 
+   * @param list - a SinglyLinkedList object
+   * @return int
+   */
+  private int getReversedListNumber(SinglyLinkedList list) {
+    SinglyLinkedListNode trace = list.head;
+    String temp = "";
+
+    while (trace != null) {
+      temp = Integer.toString(trace.getValue()) + temp;
+      trace = trace.getNext();
+    }
+
+    return Integer.parseInt(temp);
+  }
 
 }
 
