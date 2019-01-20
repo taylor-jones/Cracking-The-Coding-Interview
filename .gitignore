@@ -1,3 +1,10 @@
+*
+!*/
+!*.*
+studio/*
+
+
+**/tempCodeRunnerFile.*
 
 # Created by https://www.gitignore.io/api/c,c++,java,xcode,macos,clion,python,intellij,jetbrains,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=c,c++,java,xcode,macos,clion,python,intellij,jetbrains,visualstudiocode
