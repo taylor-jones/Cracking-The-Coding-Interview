@@ -38,7 +38,7 @@ The goal is to solve each problem using each language. However, the over-arching
 |2.3	| Delete Middle Node	| 	|   | [Java*](2_linked_lists/java/SinglyLinkedList.java)	|   |  
 |2.4	|	Partition |	  | 	|	[Java*](2_linked_lists/java/SinglyLinkedList.java)  |   |  
 |2.5	|	Sum Lists |	  |   |	[Java*](2_linked_lists/java/SinglyLinkedList.java)  |   |  
-|2.6	| Palindrome  |	  |	  |	  |   |  
+|2.6	| Palindrome  |	  |	  |	[Java*](2_linked_lists/java/SinglyLinkedList.java)  |   |  
 |2.7	|	Intersection |	  |	  |	  |   |  
 |2.8	|	Loop Detection |	  |	  |	  |   |  
 

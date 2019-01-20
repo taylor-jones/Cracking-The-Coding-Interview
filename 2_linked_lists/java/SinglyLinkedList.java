@@ -6,16 +6,32 @@
 import java.util.HashSet;
 
 public class SinglyLinkedList {
-  public SinglyLinkedListNode head;
-  public SinglyLinkedListNode tail;
-  public int size;
+  private SinglyLinkedListNode head;
+  private SinglyLinkedListNode tail;
+  private int size;
+  private boolean verbose;
 
-  // constructor
+
+  /**
+   * Default constructor
+   */
   public SinglyLinkedList() {
     this.head = this.tail = null;
     this.size = 0;
+    this.verbose = false;
   }
 
+  /**
+   * Overrides default constructor to allow for specifying
+   * whether or not to show additional information when adding
+   * or removing list nodes.
+   * @param verbose
+   */
+  public SinglyLinkedList(boolean verbose) {
+    this.head = this.tail = null;
+    this.size = 0;
+    this.verbose = verbose;
+  }
 
   /**
    * Adds a node at the beginning of the linked list, then updates
@@ -25,7 +41,7 @@ public class SinglyLinkedList {
    * @param node
    */
   public void addAtHead(SinglyLinkedListNode node) {
-    System.out.print("Adding " + node.getValue() + " at HEAD ... ");
+    if (verbose) System.out.print("Adding " + node.getValue() + " at HEAD ... ");
 
     node.setNext(this.head);
     this.head = node;
@@ -35,7 +51,7 @@ public class SinglyLinkedList {
     }
 
     this.size += 1;
-    this.showState();
+    if (verbose) this.showState(true);
   }
 
 
@@ -58,7 +74,7 @@ public class SinglyLinkedList {
    * @param node
    */
   public void addAtTail(SinglyLinkedListNode node) {
-    System.out.print("Adding " + node.getValue() + " at TAIL ... ");
+    if (verbose) System.out.print("Adding " + node.getValue() + " at TAIL ... ");
 
     if (this.tail != null) {
       this.tail.setNext(node);
@@ -68,7 +84,7 @@ public class SinglyLinkedList {
     }
 
     this.size += 1;
-    this.showState();
+    if (verbose) this.showState(true);
   }
 
 
@@ -90,12 +106,12 @@ public class SinglyLinkedList {
    */
   public int removeAtHead() {
     if (this.isEmpty()) {
-      System.out.println("The list is empty. There's nothing to remove.");
-      return (Integer) null;
+      if (verbose) System.out.print("The list is empty. There's nothing to remove. ");
+      return 0;
     }
 
     int removed = this.head.getValue();
-    System.out.print("Removing " + removed + " from HEAD ... ");
+    if (verbose) System.out.print("Removing " + removed + " from HEAD ... ");
     this.head = this.head.getNext();
     this.size -= 1;
 
@@ -103,7 +119,7 @@ public class SinglyLinkedList {
       this.tail = this.head;
     }
 
-    this.showState();
+    if (verbose) this.showState(true);
     return removed;
   }
 
@@ -114,12 +130,12 @@ public class SinglyLinkedList {
    */
   public int removeAtTail() {
     if (this.isEmpty()) {
-      System.out.println("The list is empty. There's nothing to remove.");
-      return (Integer) null;
+      if (verbose) System.out.print("The list is empty. There's nothing to remove. ");
+      return 0;
     }
 
     int removed = this.tail.getValue();
-    System.out.print("Removing " + removed + " from TAIL ... ");
+    if (verbose) System.out.print("Removing " + removed + " from TAIL ... ");
     
     if (this.head == this.tail) {
       this.head = this.tail = null;
@@ -135,7 +151,7 @@ public class SinglyLinkedList {
     }
 
     this.size -= 1;
-    this.showState();
+    if (verbose) this.showState(true);
     return removed;
   }
 
@@ -147,11 +163,12 @@ public class SinglyLinkedList {
    *  value, false if not.
    */
   public boolean has(int value) {
+    if (verbose) System.out.print("List has value " + value + ": ");
+
     if (!this.isEmpty()) {
       SinglyLinkedListNode temp = this.head;
       while (temp != null) {
         if (temp.getValue() == value) {
-          System.out.println(value + " is in the list.");
           return true;
         }
 
@@ -159,7 +176,6 @@ public class SinglyLinkedList {
       }
     }
 
-    System.out.println(value + " is not in the list.");
     return false;
   }
 
@@ -176,14 +192,13 @@ public class SinglyLinkedList {
   }
 
 
-
   /**
    * Updates the head, tail, and size of the current list with
    * some other list, effectively replacing the current list
    * with the new list.
    * @param newList - SinglyLinkedList - the replacement list.
    */
-  private void replaceWith(SinglyLinkedList newList) {
+  public void replaceWith(SinglyLinkedList newList) {
     this.head = newList.head;
     this.tail = newList.tail;
     this.size = newList.size;
@@ -191,10 +206,10 @@ public class SinglyLinkedList {
 
 
   /**
-   * Prints the size and contents of the linked list.
+   * Prints the values of the items in the list.
    */
   public void print() {
-    System.out.print("List Size: " + this.size + "   Values: ");
+    System.out.print("VALUES: ");
     SinglyLinkedListNode trace = head;
 
     while (trace != null) {
@@ -211,22 +226,35 @@ public class SinglyLinkedList {
   }
 
 
-  public void showState() {
-    System.out.print("Size: " + this.size);
+
+  /**
+   * Displays the current details of the linked list including:
+   * - the size
+   * - the value of the head node
+   * - the value of the tail node
+   */
+  public void showState(boolean showItems) {
+    System.out.print("SIZE: " + this.size);
+    SinglyLinkedListNode trace = head;
 
     if (this.head == null) {
-      System.out.print("  Head: null");
+      System.out.print("  HEAD: null");
     } else {
-      System.out.print("  Head:" + this.head.getValue());
+      System.out.print("  HEAD:" + this.head.getValue());
     }
 
     if (this.tail == null) {
-      System.out.print("  Tail: null");
+      System.out.print("  TAIL: null");
     } else {
-      System.out.print("  Tail:" + this.tail.getValue());
+      System.out.print("  TAIL:" + this.tail.getValue());
     }
 
-    System.out.print("\n");
+    if (showItems) {
+      System.out.print("  ");  
+      this.print();
+    } else {
+      System.out.print('\n');
+    }
   }
 
 
@@ -243,7 +271,8 @@ public class SinglyLinkedList {
    * Runtime: O(n)
    ********************************************************/
   public void removeDups() {
-    System.out.print("Removing duplicate values ... ");
+    System.out.print("> Before: ");
+    this.print();
 
     HashSet set = new HashSet<>();
     SinglyLinkedListNode curr = this.head;
@@ -253,6 +282,9 @@ public class SinglyLinkedList {
 
     while (curr != null) {
       if (set.contains(curr.getValue())) {
+        System.out.print("Dupe Found\t");
+        this.print();
+
         prev.setNext(curr.getNext());
       } else {
         set.add(curr.getValue());
@@ -264,7 +296,12 @@ public class SinglyLinkedList {
     }
 
     this.size = count;
-    System.out.println("Items Removed: " + (prevSize - this.size));
+    if (this.size == 1) {
+      this.head = this.tail;
+    }
+
+    System.out.print("> After: ");
+    this.print();
   }
 
 
@@ -277,22 +314,29 @@ public class SinglyLinkedList {
    *  or the element at the (size - k - 1) index. Calcuate the target element number, 
    *  and use a for loop to traverse the list until this element is reached.
    * 
+   * Note that this function returns a string, which is the resulting value
+   *  of the kth-from-last node, if valid. If invalid, a response explaining
+   *  the error is returned. This is a bit of a workaround to avoiding
+   *  the issue of a NullPointerException in the case where an int return
+   *  is expected, but the node didn't exist (which would've returned null).
+   * 
    * Runtime: O(n)
    ********************************************************/
-  public int nthFromLast(int k) {
+  public String nthFromLast(int k) {
     SinglyLinkedListNode curr = head;
     int target = this.size - k;
 
-    if (k <= (size - 1)) {
-      for (int i = 1; i < target; i++) {
-        curr = curr.getNext();
-      }
-  
-      return curr.getValue();
+    if (head == null) {
+      return "The list is empty!";
+    } else if (target <= 0) {
+      return "Not enough items to get " + k + " from last.";
     }
 
-    // There aren't enough elements to get the kth from last
-    return (Integer) null;
+    for (int i = 1; i < target; i++) {
+      curr = curr.getNext();
+    }
+
+    return Integer.toString(curr.getValue());
   }
 
 
@@ -300,31 +344,34 @@ public class SinglyLinkedList {
   /********************************************************
    * 2.2 - Return Kth to Last
    * Description: Find the kth from last element in a singly-linked list.
+   * 
    * Variation: If the linked-list size were unknown...
+   * 
    * Solution: Use a lead node to move ahead k elements into the list. 
    *  Then, move both the lead node and trail node until the lead node
    *  reaches the end of the list. At that point, the trail node will
    *  be k elements from the end.
    * 
+   * Note that this function returns a string, which is the resulting value
+   *  of the kth-from-last node, if valid. If invalid, a response explaining
+   *  the error is returned. This is a bit of a workaround to avoiding
+   *  the issue of a NullPointerException in the case where an int return
+   *  is expected, but the node didn't exist (which would've returned null).
+   * 
    * Runtime: O(n)
    * Space: O(1)
    ********************************************************/
-  public int nthFromLast2(int k) {
+  public String nthFromLast2(int k) {
     SinglyLinkedListNode trail = this.head;
     SinglyLinkedListNode lead = this.head;
 
-    if (lead == null) {
-      System.out.println("The list is empty!");
-      return (Integer) null;
-    }
+    // Make sure the list isn't empty
+    if (lead == null) return "The list is empty!";
 
     // move the lead node ahead k nodes into the list
     for (int i = 0; i < k; i++) {
       lead = lead.getNext();
-      if (lead == null) {
-        // There aren't enough elements to get the kth from last
-        return (Integer) null;
-      }
+      if (lead == null) return "Not enough items to get " + k + " from last.";
     }
 
     // then, move both the lead node and trail node until the end of the list is reached
@@ -333,7 +380,7 @@ public class SinglyLinkedList {
       lead = lead.getNext();
     }
 
-    return trail.getValue();
+    return Integer.toString(trail.getValue());
   }
 
 
@@ -355,12 +402,13 @@ public class SinglyLinkedList {
 
     if (temp == node) {
       removeAtHead();
+      return;
     } else {
       while (temp.getNext() != null) {
         if (temp.getNext() == node) {
           temp.setNext(temp.getNext().getNext());
           this.size -= 1;
-          System.out.println("Deleted given node with value " + node.getValue());
+          System.out.println("Deleted node with value " + node.getValue());
           return;
         }
 
@@ -432,6 +480,13 @@ public class SinglyLinkedList {
   *  list. Write a function that adds the two numbers and returns
   *  the sum as a linked list.
   * 
+  * Solution: Get the int value of the reversed list amount for
+  *  each list and then add those two values. Then, convert that 
+  *  integer to a string and add each of the digits to the head
+  *  of the new linked list.
+  * 
+  * Runtime: O(n)
+  *
   * Example: 
   *  Input: (7 -> 1 -> 6) + (5 -> 9 -> 2), which is 617 + 295.
   *  Output: 2 -> 1 -> 9, which is 912.
@@ -473,5 +528,50 @@ public class SinglyLinkedList {
     return Integer.parseInt(temp);
   }
 
+
+
+  /**
+   * Helper function that traverses a linked list of integers
+   *  and returns the integer value of the digits.
+   * 
+   * Example: 
+   *  Input: (7 -> 1 -> 6) Output: 716.
+   * 
+   * @param list - a SinglyLinkedList object
+   * @return int
+   */
+  private int getListNumber(SinglyLinkedList list) {
+    SinglyLinkedListNode trace = list.head;
+    String temp = "";
+
+    while (trace != null) {
+      temp += Integer.toString(trace.getValue());
+      trace = trace.getNext();
+    }
+
+    return Integer.parseInt(temp);
+  }
+
+
+
+  /********************************************************
+  * 2.6 - Palindrome
+  * Description: Implement a function to check if a linked list
+  *  is a palindrome.
+  * 
+  * Solution: Get the reversed integer value and the non-reversed
+  *  integer value. Check if the two values are equal.
+  * 
+  * Runtime: 
+  *
+  * Examples:  
+  *   Input: (1 -> 2 -> 3 -> 2 -> 1)    Output: true    
+  *   Input: (1 -> 2 -> 3 -> 4 -> 5)    Output: false
+  ********************************************************/
+  public boolean isPalindrome() {
+    int intVal = this.getListNumber(this);
+    int intValRev = this.getReversedListNumber(this);
+    return intVal == intValRev;
+  }
 }
 
