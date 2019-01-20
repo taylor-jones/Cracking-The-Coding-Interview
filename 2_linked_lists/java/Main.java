@@ -12,12 +12,16 @@ public class Main {
     // 
     // Testing base functionality and populating lists.
     // 
+    System.out.println("\n*** Testing base Singly-Linked List functionality...");
     SinglyLinkedList list = new SinglyLinkedList(true);
+    list.addAtHead(1);
+    list.addAtHead(1);
     list.addAtHead(2);
     list.addAtHead(2);
     list.addAtHead(2);
     list.addAtTail(8);
     list.addAtTail(9);
+    list.addAtTail(3);
 
     list.removeAtHead();
     list.removeAtTail();
@@ -40,20 +44,20 @@ public class Main {
     System.out.println("\n\n*** Testing : 2.2 - Return Kth to Last");
 
     // V1
-    System.out.println("\n* Version 1 - List Size Known");
-    System.out.println(list.nthFromLast(0));
-    System.out.println(list.nthFromLast(1));
-    System.out.println(list.nthFromLast(2));
-    System.out.println(list.nthFromLast(3));
-    System.out.println(list.nthFromLast(4));
+    System.out.println("* Version 1 - List Size Known");
+    System.out.println("0th from last: " + list.nthFromLast(0));
+    System.out.println("1st from last: " + list.nthFromLast(1));
+    System.out.println("2nd from last: " + list.nthFromLast(2));
+    System.out.println("3rd from last: " + list.nthFromLast(3));
+    System.out.println("4th from last: " + list.nthFromLast(4));
 
     // V2
     System.out.println("\n* Version 2 - List Size Unknown");
-    System.out.println(list.nthFromLast2(0));
-    System.out.println(list.nthFromLast2(1));
-    System.out.println(list.nthFromLast2(2));
-    System.out.println(list.nthFromLast2(3));
-    System.out.println(list.nthFromLast2(4));
+    System.out.println("0th from last: " + list.nthFromLast2(0));
+    System.out.println("1st from last: " + list.nthFromLast2(1));
+    System.out.println("2nd from last: " + list.nthFromLast2(2));
+    System.out.println("3rd from last: " + list.nthFromLast2(3));
+    System.out.println("4th from last: " + list.nthFromLast2(4));
 
 
     // 
@@ -62,11 +66,13 @@ public class Main {
     System.out.println("\n\n*** Testing : 2.3 - Delete Middle Node");
     SinglyLinkedListNode fiveNode = new SinglyLinkedListNode(5);
     SinglyLinkedListNode nineNode = new SinglyLinkedListNode(9);  // never added
-    list.addAtHead(8);
-    list.addAtTail(3);
     list.addAtHead(fiveNode);
+    list.addAtHead(7);
+    list.addAtTail(3);
     list.deleteNode(fiveNode);
+    list.print();
     list.deleteNode(nineNode);
+    list.print();
 
 
     // 
@@ -106,19 +112,24 @@ public class Main {
     // 
     // Testing 2.6 - Palindrome
     // 
-    list1.replaceWith(new SinglyLinkedList(true));
+    System.out.println("\n\n*** Testing : 2.6 - Palindrome");
+    list1.replaceWith(new SinglyLinkedList());
     list1.addAtHead(1);
     list1.addAtHead(2);
     list1.addAtHead(3);
     list1.addAtHead(2);
     list1.addAtHead(1);
-
-    list2.replaceWith(new SinglyLinkedList(true));
+    System.out.print("List1: ");
+    list1.print();
+    
+    list2.replaceWith(new SinglyLinkedList());
     list2.addAtHead(1);
     list2.addAtHead(2);
     list2.addAtHead(3);
     list2.addAtHead(4);
     list2.addAtHead(5);
+    System.out.print("List2: ");
+    list2.print();
 
     System.out.println("Is list1 a palindrome? " + list1.isPalindrome());
     System.out.println("Is list2 a palindrome? " + list2.isPalindrome());

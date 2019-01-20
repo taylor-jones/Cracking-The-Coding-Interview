@@ -202,6 +202,7 @@ public class SinglyLinkedList {
     this.head = newList.head;
     this.tail = newList.tail;
     this.size = newList.size;
+    this.verbose = newList.verbose;
   }
 
 
@@ -282,9 +283,6 @@ public class SinglyLinkedList {
 
     while (curr != null) {
       if (set.contains(curr.getValue())) {
-        System.out.print("Dupe Found\t");
-        this.print();
-
         prev.setNext(curr.getNext());
       } else {
         set.add(curr.getValue());
