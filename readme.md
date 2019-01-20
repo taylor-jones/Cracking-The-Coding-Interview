@@ -14,15 +14,15 @@ The goal is to solve each problem using each language. However, the over-arching
 
 | #  	| Title | C   | C++ | Java  | JS  | Python
 |---  |---  |---  |---  |---  |---  |---  
-|1.1	|Is Unique	|	  |	[C++](1_arrays_and_strings/1.1/cpp/main.cpp)  |	[Java](1_arrays_and_strings/1.1/java/Main.java)  | [JS](1_arrays_and_strings/1.1/js/main.js)  |  [Python](1_arrays_and_strings/1.1/python/main.py)
-|1.2	| Check Permutation	| 	| [C++](1_arrays_and_strings/1.2/cpp/main.cpp)	| [Java](1_arrays_and_strings/1.2/java/Main.java)	| [JS](1_arrays_and_strings/1.2/js/main.js)  |  [Python](1_arrays_and_strings/1.2/python/main.py)
-|1.3	|	URLify |	| [C++](1_arrays_and_strings/1.3/cpp/main.cpp)	|	[Java](1_arrays_and_strings/1.3/java/Main.java)  | [JS](1_arrays_and_strings/1.3/js/main.js) |  [Python](1_arrays_and_strings/1.3/python/main.py)
-|1.4  | Palindrome Permutation  |   |   | [Java](1_arrays_and_strings/1.4/java/Main.java)  | [JS](1_arrays_and_strings/1.4/js/main.js)  |
-|1.5  | One Away  |   |   | [Java](1_arrays_and_strings/1.5/java/Main.java)  | [JS](1_arrays_and_strings/1.5/js/main.js)  |
-|1.6	|	String Compression |	| [C++](1_arrays_and_strings/1.6/cpp/main.cpp)	 |	[Java](1_arrays_and_strings/1.6/java/Main.java)  |    |  
+|1.1	|Is Unique	|	  |	[C++](1_arrays_and_strings/src/is_unique/isUnique.cpp)  |	[Java](1_arrays_and_strings/src/is_unique/IsUnique.java)  | [JS](1_arrays_and_strings/src/is_unique/isUnique.js)  |  [Python](1_arrays_and_strings/src/is_unique/is_unique.py)
+|1.2	| Check Permutation	| 	| [C++](1_arrays_and_strings/src/check_permutation/checkPermutation.cpp)	| [Java](1_arrays_and_strings/src/check_permutation/CheckPermutation.java)	| [JS](1_arrays_and_strings/src/check_permutation/checkPermutation.js)  |  [Python](1_arrays_and_strings/src/check_permutation/check_permutation.py)
+|1.3	|	URLify |	| [C++](1_arrays_and_strings/src/urlify/urlify.cpp)	|	[Java](1_arrays_and_strings/src/urlify/Urlify.java)  | [JS](1_arrays_and_strings/src/urlify/urlify.js) |  [Python](1_arrays_and_strings/src/urlify/urlify.py)
+|1.4  | Palindrome Permutation  |   |   | [Java](1_arrays_and_strings/src/palindrome_permutation/PalindromePermutation.java)  | [JS](1_arrays_and_strings/src/palindrome_permutation/palindromePermutation.js)  |
+|1.5  | One Away  |   |   | [Java](1_arrays_and_strings/src/one_away/OneAway.java)  | [JS](1_arrays_and_strings/src/one_away/oneAway.js)  |
+|1.6	|	String Compression |	| [C++](1_arrays_and_strings/src/string_compression/stringCompression.cpp)	 |	[Java](1_arrays_and_strings/src/string_compression/StringCompression.java)  |    |  
 |1.7	| Rotate Matrix	|	  |	  |	  |   |  
 |1.8	|	Zero Matrix |	  |	  |	  |   |  
-|1.9	|	String Rotation |	  |	[C++](1_arrays_and_strings/1.9/cpp/main.cpp)  |	[Java](1_arrays_and_strings/1.9/java/Main.java)  |  |  
+|1.9	|	String Rotation |	  |	[C++](1_arrays_and_strings/src/string_rotation/stringRotation.cpp)  |	[Java](1_arrays_and_strings/src/string_rotation/StringRotation.java)  |  |  
 
 <br>
 
@@ -30,15 +30,15 @@ The goal is to solve each problem using each language. However, the over-arching
 
 | #  	| Title | C   | C++ | Java  | JS  | Python
 |---  |---  |---  |---  |---  |---  |---  
-|2.x  | Singly-linked list |  |   | [Java](2_linked_lists/java/SinglyLinkedList.java)  |   | 
+|2.x  | Singly-linked list |  |   | [Java](2_linked_lists/src/java/SinglyLinkedList.java)  |   | 
 |2.x  | Doubly-linked list |  |   |   |   | 
 |2.x  | Circularly-linked list |   |   |   |   | 
-|2.1	|	Remove Dups  |	  |	  | [Java*](2_linked_lists/java/SinglyLinkedList.java)  |   |  
-|2.2	| Return Kth to Last  | 	|	  | [Java*](2_linked_lists/java/SinglyLinkedList.java)  |   |
-|2.3	| Delete Middle Node	| 	|   | [Java*](2_linked_lists/java/SinglyLinkedList.java)	|   |  
-|2.4	|	Partition |	  | 	|	[Java*](2_linked_lists/java/SinglyLinkedList.java)  |   |  
-|2.5	|	Sum Lists |	  |   |	[Java*](2_linked_lists/java/SinglyLinkedList.java)  |   |  
-|2.6	| Palindrome  |	  |	  |	[Java*](2_linked_lists/java/SinglyLinkedList.java)  |   |  
+|2.1	|	Remove Dups  |	  |	  | [Java*](2_linked_lists/src/java/SinglyLinkedList.java)  |   |  
+|2.2	| Return Kth to Last  | 	|	  | [Java*](2_linked_lists/src/java/SinglyLinkedList.java)  |   |
+|2.3	| Delete Middle Node	| 	|   | [Java*](2_linked_lists/src/java/SinglyLinkedList.java)	|   |  
+|2.4	|	Partition |	  | 	|	[Java*](2_linked_lists/src/java/SinglyLinkedList.java)  |   |  
+|2.5	|	Sum Lists |	  |   |	[Java*](2_linked_lists/src/java/SinglyLinkedList.java)  |   |  
+|2.6	| Palindrome  |	  |	  |	[Java*](2_linked_lists/src/java/SinglyLinkedList.java)  |   |  
 |2.7	|	Intersection |	  |	  |	  |   |  
 |2.8	|	Loop Detection |	  |	  |	  |   |  
 
