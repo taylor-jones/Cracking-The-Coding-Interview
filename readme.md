@@ -39,7 +39,7 @@ The goal is to solve each problem using each language. However, the over-arching
 |2.4	|	Partition |	  | 	|	[Java*](2_linked_lists/src/java/SinglyLinkedList.java)  |   |  
 |2.5	|	Sum Lists |	  |   |	[Java*](2_linked_lists/src/java/SinglyLinkedList.java)  |   |  
 |2.6	| Palindrome  |	  |	  |	[Java*](2_linked_lists/src/java/SinglyLinkedList.java)  |   |  
-|2.7	|	Intersection |	  |	  |	  |   |  
+|2.7	|	Intersection |	  |	  |	[Java*](2_linked_lists/src/java/SinglyLinkedList.java)  |   |  
 |2.8	|	Loop Detection |	  |	  |	  |   |  
 
 \* Some of the solutions are in the same file as the their corresponding linked-list implementations.

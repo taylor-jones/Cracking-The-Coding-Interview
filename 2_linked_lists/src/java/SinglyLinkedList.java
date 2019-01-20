@@ -4,6 +4,7 @@
 
 
 import java.util.HashSet;
+import java.util.HashMap;
 
 public class SinglyLinkedList {
   private SinglyLinkedListNode head;
@@ -506,8 +507,7 @@ public class SinglyLinkedList {
    * Helper function that traverses a linked list of integers
    *  and returns the reversed integer value of the digits.
    * 
-   * Example: 
-   *  Input: (7 -> 1 -> 6) Output: 617.
+   * Example:   Input: (7 -> 1 -> 6) Output: 617.
    * 
    * @param list - a SinglyLinkedList object
    * @return int
@@ -530,8 +530,7 @@ public class SinglyLinkedList {
    * Helper function that traverses a linked list of integers
    *  and returns the integer value of the digits.
    * 
-   * Example: 
-   *  Input: (7 -> 1 -> 6) Output: 716.
+   * Example:   Input: (7 -> 1 -> 6) Output: 716.
    * 
    * @param list - a SinglyLinkedList object
    * @return int
@@ -570,6 +569,59 @@ public class SinglyLinkedList {
     return intVal == intValRev;
   }
 
+
+  /********************************************************
+   * 2.7 - Intersection
+   * Description: Given two (singly) linked lists, determine 
+   *  if the two lists intersect. Return the inter­secting node. 
+   *  Note that the intersection is defined based on reference, 
+   *  not value. That is, if the kth node of the first linked list
+   *  is the exact same node (by reference) as the jth node of 
+   *  the second linked list, then they are intersecting
+   * 
+   * Solution: Create two trace nodes, starting one at each of the
+   *  head nodes of the the lists. With either list has items, add
+   *  the item to a HashMap, where the key is the node and the value
+   *  is the # of times the node has been enountered. Then, check 
+   *  if there's more than one of those items in the map. If so, 
+   *  it's in both lists, making it the intersection.
+   * 
+   * Runtime: O(n)
+   * 
+   * @param list SinglyLinkedList to compare to this list.
+   * @return SinglyLinkedListNode that represents the intersection
+   *  of the two lists, or a null SinglyLinkedListNode if no
+   *  intersection is found.
+   */
+  public SinglyLinkedListNode intersection(SinglyLinkedList list) {
+    HashMap<SinglyLinkedListNode, Integer>map = new HashMap<>();
+    SinglyLinkedListNode result = null;
+    SinglyLinkedListNode trace1 = this.head;
+    SinglyLinkedListNode trace2 = list.head;
+
+    while (trace1 != null || trace2 != null) {
+      if (trace1 != null) {
+        map.merge(trace1, 1, (a, b) -> a == null ? 0 : a + b);
+        if (map.get(trace1) > 1) result = trace1;
+      }
+      
+      if (trace2 != null) {
+        map.merge(trace2, 1, (a, b) -> a == null ? 0 : a + b);
+        if (map.get(trace2) > 1) result = trace2;
+      }
+
+      if (result != null) {
+        System.out.println("Intersection found at node with value: " + result.getValue());
+        return result;
+      }
+
+      trace1 = trace1.getNext();
+      trace2 = trace2.getNext();
+    }
+
+    System.out.println("No intersection exists.");
+    return result;
+  }
 
 
 
@@ -702,6 +754,26 @@ public class SinglyLinkedList {
 
     System.out.println("Is list1 a palindrome? " + list1.isPalindrome());
     System.out.println("Is list2 a palindrome? " + list2.isPalindrome());
+
+
+    // 
+    // Testing 2.7 - Intersection
+    // 
+    System.out.println("\n\n*** Testing : 2.7 - Intersection");
+    list1.replaceWith(new SinglyLinkedList());
+    list2.replaceWith(new SinglyLinkedList());
+
+    list1.addAtHead(7);
+    list1.addAtHead(8);
+    list1.addAtHead(nineNode);
+
+    list2.addAtHead(1);
+    list2.addAtHead(2);
+    list2.addAtHead(3);
+    list1.intersection(list2);
+    
+    list2.addAtTail(nineNode);
+    list1.intersection(list2);
   }
 
 }
