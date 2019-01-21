@@ -58,6 +58,10 @@ public class StackWithMin extends Stack<Integer> {
   }
 
 
+
+  /**
+   * Example Usage
+   */
   public static void main(String[] args) {
     StackWithMin stack = new StackWithMin(true);
     stack.push(5);
