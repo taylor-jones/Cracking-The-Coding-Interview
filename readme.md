@@ -1,12 +1,12 @@
 # Cracking The Coding Interview
-Implementing and demonstrating solutions to each of the problems in Cracking The Coding Interview - 6th Edition, using each of:
+Implementing solutions to each of the problems in Cracking The Coding Interview - 6th Edition, using each of:
 - C
 - C++
 - Java
 - JavaScript
 - Python
 
-The goal is to solve each problem using each language. However, the over-arching goal is understanding, rather than completion, so I'm using this repo as a journal of sorts, while I work through the book and work on improving my understanding of the languages and concepts. 
+The goal is to solve each problem using each language. However, the over-arching goal is understanding, rather than completion, so I'm using this repo as a journal of sorts, while I work through the book. 
 
 <br>
 
