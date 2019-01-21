@@ -624,6 +624,45 @@ public class SinglyLinkedList {
   }
 
 
+  /**
+   * 2.8 - Loop Detection
+   * Description: Given a circular linked list, implement an algorithm 
+   *  that returns the node at the beginning of the loop.
+   * Circular linked list (in this context): A (corrupt) linked list 
+   *  in which a node's next pointer points to an earlier node, 
+   * so as to make a loop in the linked list.
+   * 
+   * Solution: Use a HashSet to track encountered nodes. If any node is
+   *  in the list more than once, it's the ciruclar looping node.
+   * 
+   * Runtime: O(n)
+   * 
+   * Example
+   *  Input: A -> B -> C -> D -> E -> C[thesameCasearlier]
+   *  Output: C
+   * 
+   * @param list
+   * @return SinglyLinkedListNode - representing the circular link
+   */
+  public SinglyLinkedListNode detectLoop(SinglyLinkedList list) {
+    HashSet<SinglyLinkedListNode>set = new HashSet<>();
+    SinglyLinkedListNode trace = list.head;
+
+    while (trace.getNext() != null) {
+      if (set.contains(trace)) {
+        System.out.println("Circular link node found with value: " + trace.getValue());
+        return trace;
+      }
+
+      set.add(trace);
+      trace = trace.getNext();
+    }
+
+    System.out.println("No circular link node found");
+    return trace;
+  }
+
+
 
   /********************************************************
    * Testing list functionality / Examples
@@ -764,8 +803,8 @@ public class SinglyLinkedList {
     list2.replaceWith(new SinglyLinkedList());
 
     list1.addAtHead(7);
-    list1.addAtHead(8);
     list1.addAtHead(nineNode);
+    list1.addAtHead(8);
 
     list2.addAtHead(1);
     list2.addAtHead(2);
@@ -774,6 +813,23 @@ public class SinglyLinkedList {
     
     list2.addAtTail(nineNode);
     list1.intersection(list2);
+
+
+    // 
+    // Testing 2.8 - Loop Detection
+    // 
+    System.out.println("\n\n*** Testing : 2.8 - Loop detection");
+    list1.replaceWith(new SinglyLinkedList());
+    list1.addAtHead(3);
+    list1.addAtHead(4);
+    list1.addAtHead(fiveNode);
+    list1.addAtHead(6);
+    list1.addAtHead(7);
+    list1.detectLoop(list1);
+    
+    list1.addAtTail(fiveNode);
+    list1.detectLoop(list1);
+
   }
 
 }

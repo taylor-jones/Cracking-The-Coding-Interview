@@ -30,9 +30,7 @@ The goal is to solve each problem using each language. However, the over-arching
 
 | #  	| Title | C   | C++ | Java  | JS  | Python
 |---  |---  |---  |---  |---  |---  |---  
-|2.x  | Singly-linked list |  |   | [Java](2_linked_lists/src/java/SinglyLinkedList.java)  |   | 
-|2.x  | Doubly-linked list |  |   |   |   | 
-|2.x  | Circularly-linked list |   |   |   |   | 
+|2.x  | Linked list |  |   | [Java](2_linked_lists/src/java/SinglyLinkedList.java)  |   | 
 |2.1	|	Remove Dups  |	  |	  | [Java*](2_linked_lists/src/java/SinglyLinkedList.java)  |   |  
 |2.2	| Return Kth to Last  | 	|	  | [Java*](2_linked_lists/src/java/SinglyLinkedList.java)  |   |
 |2.3	| Delete Middle Node	| 	|   | [Java*](2_linked_lists/src/java/SinglyLinkedList.java)	|   |  
@@ -40,7 +38,7 @@ The goal is to solve each problem using each language. However, the over-arching
 |2.5	|	Sum Lists |	  |   |	[Java*](2_linked_lists/src/java/SinglyLinkedList.java)  |   |  
 |2.6	| Palindrome  |	  |	  |	[Java*](2_linked_lists/src/java/SinglyLinkedList.java)  |   |  
 |2.7	|	Intersection |	  |	  |	[Java*](2_linked_lists/src/java/SinglyLinkedList.java)  |   |  
-|2.8	|	Loop Detection |	  |	  |	  |   |  
+|2.8	|	Loop Detection |	  |	  |	[Java*](2_linked_lists/src/java/SinglyLinkedList.java)  |   |  
 
 \* Some of the solutions are in the same file as the their corresponding linked-list implementations.
 
