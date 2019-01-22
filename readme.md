@@ -51,6 +51,6 @@ The goal is to solve each problem using each language. However, the over-arching
 |3.1	|	Three in One |	  |	  |	  |   |  
 |3.2	|	Stack Min |	  |	  |	[Java](3_stacks_and_queues/src/java/StackWithMin.java)  |   |  
 |3.3	|	Stack of Plates |	  |	  | [Java](3_stacks_and_queues/src/java/SetOfStacks.java)	  |   |  
-|3.4	|	Queue via Stacks |	  |	  |	  |   |  
+|3.4	|	Queue via Stacks |	  |	  |	[Java](3_stacks_and_queues/src/java/QueueFromStacks.java)  |   |  
 |3.5	|	Sort Stack |	  |	  |	  |   |  
 |3.6	|	Animal Shelter |	  |	  |	  |   |  

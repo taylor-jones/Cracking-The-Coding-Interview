@@ -66,7 +66,7 @@ public class Stack<T> {
         trace = trace.next;
       }
     }
-    
+
     System.out.print('\n');
   }
 }
